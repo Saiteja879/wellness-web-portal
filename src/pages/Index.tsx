@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
         <AboutSection />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };

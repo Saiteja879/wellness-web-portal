@@ -1,7 +1,15 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  
+  const handleAppointmentClick = () => {
+    navigate("/appointment");
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Main Content */}
@@ -23,6 +31,7 @@ const HeroSection = () => {
               
               <Button 
                 className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium py-3 px-6 rounded-md text-lg w-full transition-colors duration-200"
+                onClick={handleAppointmentClick}
               >
                 Appointment
               </Button>
@@ -38,8 +47,6 @@ const HeroSection = () => {
           </div>
         </div>
       </main>
-
-      
     </div>
   );
 };
