@@ -9,6 +9,10 @@ const HeroSection = () => {
   const handleAppointmentClick = () => {
     navigate("/appointment");
   };
+  
+  const handlePrescriptionClick = () => {
+    navigate("/prescription");
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -29,12 +33,22 @@ const HeroSection = () => {
               </h2>
               <p className="text-gray-700 mb-6">Get Appointment with One Click</p>
               
-              <Button 
-                className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium py-3 px-6 rounded-md text-lg w-full transition-colors duration-200"
-                onClick={handleAppointmentClick}
-              >
-                Appointment
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3 w-full">
+                <Button 
+                  className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium py-3 px-6 rounded-md text-lg w-full transition-colors duration-200"
+                  onClick={handleAppointmentClick}
+                >
+                  Appointment
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  className="bg-white hover:bg-gray-100 text-gray-800 border border-gray-300 font-medium py-3 px-6 rounded-md text-lg w-full transition-colors duration-200"
+                  onClick={handlePrescriptionClick}
+                >
+                  View Prescription
+                </Button>
+              </div>
             </Card>
 
             {/* About Us Button */}
