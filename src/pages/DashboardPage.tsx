@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -11,7 +10,8 @@ import {
   SidebarMenuButton,
   SidebarInset,
 } from "@/components/ui/sidebar";
-import { FileText, User, Folder, LogOut } from "lucide-react";
+import { FileText, User, Folder } from "lucide-react";
+import { Link } from "react-router-dom";
 import DashboardHeader from "@/components/DashboardHeader";
 import Footer from "@/components/Footer";
 
@@ -44,25 +44,34 @@ const DashboardPage = () => {
                   <SidebarMenuButton 
                     isActive={true} 
                     tooltip="Details"
+                    asChild
                   >
-                    <User />
-                    <span>Details</span>
+                    <Link to="/dashboard">
+                      <User />
+                      <span>Details</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton 
                     tooltip="Records"
+                    asChild
                   >
-                    <Folder />
-                    <span>Records</span>
+                    <Link to="/records">
+                      <Folder />
+                      <span>Records</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton 
                     tooltip="Medical Certificate"
+                    asChild
                   >
-                    <FileText />
-                    <span>Medical Certificate</span>
+                    <Link to="/medical-certificate">
+                      <FileText />
+                      <span>Medical Certificate</span>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

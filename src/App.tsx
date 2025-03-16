@@ -5,6 +5,7 @@ import AppointmentPage from "./pages/AppointmentPage";
 import PrescriptionLookup from "./pages/PrescriptionLookup";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
+import RecordsDashboard from "./pages/RecordsDashboard";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardPage />,
+  },
+  {
+    path: "/records",
+    element: <RecordsDashboard />,
   },
 ]);
 
