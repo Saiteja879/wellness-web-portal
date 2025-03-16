@@ -29,7 +29,9 @@ const Header = () => {
       
       {/* Desktop navigation */}
       <nav className="hidden md:flex space-x-8">
+        <Link to="/" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Home</Link>
         <Link to="/prescription" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Patients</Link>
+        <Link to="/login" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Login</Link>
         <a href="#pharmacist" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Pharmacist</a>
         <a href="#doctor" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Doctor</a>
       </nav>
@@ -38,7 +40,9 @@ const Header = () => {
       {isMenuOpen && (
         <div className="absolute top-20 right-0 left-0 bg-[#D3E4FD] z-10 md:hidden">
           <div className="flex flex-col items-center py-4">
+            <Link to="/" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/prescription" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Patients</Link>
+            <Link to="/login" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Login</Link>
             <a href="#pharmacist" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]">Pharmacist</a>
             <a href="#doctor" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]">Doctor</a>
           </div>

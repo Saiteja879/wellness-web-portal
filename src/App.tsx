@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from "./pages/Index";
 import AppointmentPage from "./pages/AppointmentPage";
 import PrescriptionLookup from "./pages/PrescriptionLookup";
+import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/prescription",
     element: <PrescriptionLookup />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
 ]);
 

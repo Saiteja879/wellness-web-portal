@@ -13,6 +13,10 @@ const HeroSection = () => {
   const handlePrescriptionClick = () => {
     navigate("/prescription");
   };
+  
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -49,6 +53,13 @@ const HeroSection = () => {
                   View Prescription
                 </Button>
               </div>
+              
+              <Button 
+                className="bg-[#33C3F0] hover:bg-[#1EAEDB] text-white font-medium py-2 px-6 rounded-md text-lg w-full transition-colors duration-200 mt-3"
+                onClick={handleLoginClick}
+              >
+                Login
+              </Button>
             </Card>
 
             {/* About Us Button */}
