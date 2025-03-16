@@ -6,6 +6,7 @@ import PrescriptionLookup from "./pages/PrescriptionLookup";
 import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import RecordsDashboard from "./pages/RecordsDashboard";
+import MedicalCertificatePage from "./pages/MedicalCertificatePage";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/records",
     element: <RecordsDashboard />,
+  },
+  {
+    path: "/medical-certificate",
+    element: <MedicalCertificatePage />,
   },
 ]);
 
