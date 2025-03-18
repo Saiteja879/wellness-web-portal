@@ -7,6 +7,7 @@ import DoctorSidebar from "@/components/DoctorSidebar";
 import AppointmentsTable from "@/components/AppointmentsTable";
 import RequestsTable from "@/components/RequestsTable";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ const DashboardPage = () => {
       </SidebarProvider>
       
       <Footer />
+      <Toaster />
     </div>
   );
 };
