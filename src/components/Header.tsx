@@ -33,7 +33,7 @@ const Header = () => {
         <Link to="/prescription" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Patients</Link>
         <Link to="/login" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Login</Link>
         <Link to="/doctor-login" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Doctor</Link>
-        <a href="#pharmacist" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Pharmacist</a>
+        <Link to="/pharmacist" className="text-lg text-gray-700 hover:text-[#33C3F0] transition-colors duration-200">Pharmacist</Link>
       </nav>
       
       {/* Mobile navigation */}
@@ -44,7 +44,7 @@ const Header = () => {
             <Link to="/prescription" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Patients</Link>
             <Link to="/login" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Login</Link>
             <Link to="/doctor-login" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Doctor</Link>
-            <a href="#pharmacist" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]">Pharmacist</a>
+            <Link to="/pharmacist" className="py-2 text-lg text-gray-700 hover:text-[#33C3F0]" onClick={() => setIsMenuOpen(false)}>Pharmacist</Link>
           </div>
         </div>
       )}

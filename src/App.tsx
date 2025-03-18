@@ -8,6 +8,7 @@ import DashboardPage from "./pages/DashboardPage";
 import RecordsDashboard from "./pages/RecordsDashboard";
 import MedicalCertificatePage from "./pages/MedicalCertificatePage";
 import DoctorLoginPage from "./pages/DoctorLoginPage";
+import PharmacistPage from "./pages/PharmacistPage";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/doctor-login",
     element: <DoctorLoginPage />,
+  },
+  {
+    path: "/pharmacist",
+    element: <PharmacistPage />,
   },
 ]);
 
