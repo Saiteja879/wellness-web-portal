@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Table,
   TableBody,
@@ -22,6 +23,11 @@ const sampleAppointments = [
 
 const AppointmentsTable = () => {
   const [appointments] = useState(sampleAppointments);
+  const navigate = useNavigate();
+
+  const handlePrescription = (appointment: any) => {
+    navigate('/prescription-page', { state: { patientName: appointment.name } });
+  };
 
   return (
     <div className="rounded-lg border bg-card">
@@ -49,6 +55,7 @@ const AppointmentsTable = () => {
                     variant="outline" 
                     size="sm"
                     className="hover:shadow-sm transition-shadow"
+                    onClick={() => handlePrescription(appointment)}
                   >
                     <ClipboardEdit className="mr-2 h-4 w-4" />
                     Prescription
