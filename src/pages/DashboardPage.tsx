@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
 import DashboardHeader from "@/components/DashboardHeader";
 import DoctorSidebar from "@/components/DoctorSidebar";
 import AppointmentsTable from "@/components/AppointmentsTable";
