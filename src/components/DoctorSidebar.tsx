@@ -1,5 +1,6 @@
 
-import { CalendarClock, ClipboardList, FileText } from "lucide-react";
+import { useState } from "react";
+import { CalendarClock, ClipboardList } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -36,7 +37,7 @@ const DoctorSidebar = ({ activeSection, onSectionChange }: DoctorSidebarProps) =
                   isActive={activeSection === "requests"}
                   onClick={() => onSectionChange("requests")}
                 >
-                  <FileText size={20} />
+                  <ClipboardList size={20} />
                   <span>Requests</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
