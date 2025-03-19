@@ -10,6 +10,7 @@ import MedicalCertificatePage from "./pages/MedicalCertificatePage";
 import DoctorLoginPage from "./pages/DoctorLoginPage";
 import PharmacistPage from "./pages/PharmacistPage";
 import PrescriptionPage from "./pages/PrescriptionPage";
+import AppointmentsPage from "./pages/AppointmentsPage";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/prescription-page",
     element: <PrescriptionPage />,
+  },
+  {
+    path: "/appointments",
+    element: <AppointmentsPage />,
   },
 ]);
 

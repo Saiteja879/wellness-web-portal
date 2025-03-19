@@ -1,5 +1,6 @@
 
 import { CalendarClock, ClipboardList } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import {
   Sidebar,
   SidebarContent,
@@ -16,6 +17,17 @@ type DoctorSidebarProps = {
 };
 
 const DoctorSidebar = ({ activeSection, onSectionChange }: DoctorSidebarProps) => {
+  const navigate = useNavigate();
+
+  const handleSectionChange = (section: "appointments" | "requests") => {
+    onSectionChange(section);
+    if (section === "appointments") {
+      navigate("/appointments");
+    } else {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <Sidebar className="h-full border-r" collapsible="icon">
       <SidebarContent>
@@ -25,7 +37,7 @@ const DoctorSidebar = ({ activeSection, onSectionChange }: DoctorSidebarProps) =
               <SidebarMenuItem>
                 <SidebarMenuButton 
                   isActive={activeSection === "appointments"}
-                  onClick={() => onSectionChange("appointments")}
+                  onClick={() => handleSectionChange("appointments")}
                 >
                   <CalendarClock size={20} />
                   <span>Appointments</span>
@@ -34,7 +46,7 @@ const DoctorSidebar = ({ activeSection, onSectionChange }: DoctorSidebarProps) =
               <SidebarMenuItem>
                 <SidebarMenuButton 
                   isActive={activeSection === "requests"}
-                  onClick={() => onSectionChange("requests")}
+                  onClick={() => handleSectionChange("requests")}
                 >
                   <ClipboardList size={20} />
                   <span>Requests</span>

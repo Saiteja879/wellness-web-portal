@@ -10,7 +10,15 @@ import Footer from "@/components/Footer";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState<"appointments" | "requests">("appointments");
+  const [activeSection, setActiveSection] = useState<"appointments" | "requests">("requests");
+
+  const handleSectionChange = (section: "appointments" | "requests") => {
+    if (section === "appointments") {
+      navigate("/appointments");
+    } else {
+      setActiveSection(section);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -21,27 +29,21 @@ const DashboardPage = () => {
           <div className="flex flex-1 w-full">
             <DoctorSidebar 
               activeSection={activeSection} 
-              onSectionChange={setActiveSection} 
+              onSectionChange={handleSectionChange} 
             />
             
             <div className="flex-1">
               <main className="container p-4 md:p-6 bg-[#f8fafc]">
                 <div className="mb-6">
                   <h1 className="text-2xl font-bold">
-                    {activeSection === "appointments" ? "Appointments" : "Patient Requests"}
+                    Patient Requests
                   </h1>
                   <p className="text-gray-500 mt-1">
-                    {activeSection === "appointments" 
-                      ? "Manage your patient appointments and prescriptions" 
-                      : "Review and process patient document requests"}
+                    Review and process patient document requests
                   </p>
                 </div>
                 
-                {activeSection === "appointments" ? (
-                  <AppointmentsTable />
-                ) : (
-                  <RequestsTable />
-                )}
+                <RequestsTable />
               </main>
             </div>
           </div>
