@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { CalendarClock, ClipboardList } from "lucide-react";
 import {
   Sidebar,
@@ -7,8 +6,8 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuButton,
 } from "@/components/ui/sidebar";
 
 type DoctorSidebarProps = {
@@ -18,7 +17,7 @@ type DoctorSidebarProps = {
 
 const DoctorSidebar = ({ activeSection, onSectionChange }: DoctorSidebarProps) => {
   return (
-    <Sidebar>
+    <Sidebar className="h-full border-r" collapsible="icon">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupContent>

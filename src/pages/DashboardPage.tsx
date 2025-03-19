@@ -16,35 +16,37 @@ const DashboardPage = () => {
     <div className="flex flex-col min-h-screen">
       <DashboardHeader />
       
-      <SidebarProvider defaultOpen={true}>
-        <div className="flex flex-grow w-full">
-          <DoctorSidebar 
-            activeSection={activeSection} 
-            onSectionChange={setActiveSection} 
-          />
-          
-          <SidebarInset className="p-4 md:p-6 bg-[#f8fafc]">
-            <main className="container mx-auto">
-              <div className="mb-6">
-                <h1 className="text-2xl font-bold">
-                  {activeSection === "appointments" ? "Appointments" : "Patient Requests"}
-                </h1>
-                <p className="text-gray-500 mt-1">
-                  {activeSection === "appointments" 
-                    ? "Manage your patient appointments and prescriptions" 
-                    : "Review and process patient document requests"}
-                </p>
-              </div>
-              
-              {activeSection === "appointments" ? (
-                <AppointmentsTable />
-              ) : (
-                <RequestsTable />
-              )}
-            </main>
-          </SidebarInset>
-        </div>
-      </SidebarProvider>
+      <div className="flex flex-1 w-full">
+        <SidebarProvider>
+          <div className="flex flex-1 w-full">
+            <DoctorSidebar 
+              activeSection={activeSection} 
+              onSectionChange={setActiveSection} 
+            />
+            
+            <div className="flex-1">
+              <main className="container p-4 md:p-6 bg-[#f8fafc]">
+                <div className="mb-6">
+                  <h1 className="text-2xl font-bold">
+                    {activeSection === "appointments" ? "Appointments" : "Patient Requests"}
+                  </h1>
+                  <p className="text-gray-500 mt-1">
+                    {activeSection === "appointments" 
+                      ? "Manage your patient appointments and prescriptions" 
+                      : "Review and process patient document requests"}
+                  </p>
+                </div>
+                
+                {activeSection === "appointments" ? (
+                  <AppointmentsTable />
+                ) : (
+                  <RequestsTable />
+                )}
+              </main>
+            </div>
+          </div>
+        </SidebarProvider>
+      </div>
       
       <Footer />
     </div>
